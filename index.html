@@ -70,13 +70,13 @@
                         Welcome back to sign in. As a returning customer, you
                         have access to your previously saved all information.
                     </p>
-                    <form action="./home.html" class="form auth__form">
+                    <form action="#!" class="form auth__form">
                         <div class="form__group">
                             <div class="form__text-input">
                                 <input
                                     type="email"
                                     name=""
-                                    id=""
+                                    id="email"
                                     placeholder="Email"
                                     class="form__input"
                                     autofocus
@@ -102,7 +102,7 @@
                                 <input
                                     type="password"
                                     name=""
-                                    id=""
+                                    id="password"
                                     placeholder="Password"
                                     class="form__input"
                                     required
@@ -143,8 +143,15 @@
                                 Forgot password?
                             </a>
                         </div>
+                        <p
+                            class="auth__message message message--error"
+                            id="confirmError"
+                        >
+                            Please check your email and password again.
+                        </p>
                         <div class="form__group auth__btn-group">
                             <button
+                                id="submit"
                                 class="btn btn--primary auth__btn form__submit-btn"
                             >
                                 Sign In
@@ -160,7 +167,10 @@
                         </div>
                     </form>
                     <div class="sign-in__group">
-                        <button class="btn btn--outline auth__btn btn-google">
+                        <button
+                            id="btnGoogle"
+                            class="btn btn--outline auth__btn btn-google"
+                        >
                             <img
                                 src="./assets/icons/google.svg"
                                 alt=""
@@ -168,7 +178,10 @@
                             />
                             Sign in with Google
                         </button>
-                        <button class="btn btn--outline auth__btn btn-facebook">
+                        <button
+                            id="btnFacebook"
+                            class="btn btn--outline auth__btn btn-facebook"
+                        >
                             <img
                                 src="./assets/icons/facebook.svg"
                                 alt=""
@@ -189,6 +202,7 @@
                 </div>
             </div>
         </main>
-        <script src="./JS/index.js"></script>
+        <script type="module" src="./JS/login.js"></script>
+        <script type="module" src="./JS/login-google.js"></script>
     </body>
 </html>

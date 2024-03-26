@@ -353,6 +353,12 @@ button {
     background-color: #bfe9cf;
 }
 
+.message--error {
+    display: none;
+    border: 1.5px solid #ed4337;
+    background-color: rgba(237, 67, 55, 0.1);
+}
+
 .auth__form-forgot {
     margin-top: 10px;
 }

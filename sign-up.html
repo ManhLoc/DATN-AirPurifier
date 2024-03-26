@@ -71,13 +71,20 @@
                         Create your account and you can control all product
                         functions.
                     </p>
-                    <form action="#!" class="form auth__form">
+                    <p
+                        class="auth__message message message--success"
+                        id="confirmSuccess"
+                    >
+                        Your account has been successfully created. Now you can
+                        return to the Sign In page to proceed with logging in.
+                    </p>
+                    <form action="#!" id="authForm" class="form auth__form">
                         <div class="form__group">
                             <div class="form__text-input">
                                 <input
                                     type="email"
                                     name=""
-                                    id=""
+                                    id="email"
                                     placeholder="Email"
                                     class="form__input"
                                     required
@@ -102,7 +109,7 @@
                                 <input
                                     type="password"
                                     name=""
-                                    id=""
+                                    id="password"
                                     placeholder="Password"
                                     class="form__input"
                                     required
@@ -128,16 +135,18 @@
                                 <input
                                     type="password"
                                     name=""
-                                    id=""
+                                    id="passwordTwo"
                                     placeholder="Confirm password"
                                     class="form__input"
                                     required
+                                    minlength="6"
                                 />
                                 <img
                                     src="./assets/icons/lock.svg"
                                     alt=""
                                     class="form__input-icon"
-                                /><img
+                                />
+                                <img
                                     src="./assets/icons/form-error.svg"
                                     alt=""
                                     class="form__input-icon-error"
@@ -147,6 +156,12 @@
                                 Password must be at least 6 characters
                             </p>
                         </div>
+                        <p
+                            class="auth__message message message--error"
+                            id="confirmError"
+                        >
+                            Error! Confirm password not match.
+                        </p>
                         <div class="form__group form__group--inline">
                             <label class="form__checkbox">
                                 <input
@@ -163,7 +178,9 @@
                         </div>
                         <div class="form__group auth__btn-group">
                             <button
+                                id="submit"
                                 class="btn btn--primary auth__btn form__submit-btn"
+                                type="submit"
                             >
                                 Sign Up
                             </button>
@@ -179,24 +196,6 @@
                             </button> -->
                         </div>
                     </form>
-                    <div class="sign-in__group">
-                        <button class="btn btn--outline auth__btn btn-google">
-                            <img
-                                src="./assets/icons/google.svg"
-                                alt=""
-                                class="btn__icon icon"
-                            />
-                            Sign in with Google
-                        </button>
-                        <button class="btn btn--outline auth__btn btn-facebook">
-                            <img
-                                src="./assets/icons/facebook.svg"
-                                alt=""
-                                class="btn__icon icon"
-                            />
-                            Sign in with Facebook
-                        </button>
-                    </div>
 
                     <p class="auth__text">
                         You have an account yet?
@@ -210,6 +209,7 @@
                 </div>
             </div>
         </main>
-        <script src="./JS/index.js"></script>
+        <!-- <script src="./JS/index.js"></script> -->
+        <script type="module" src="./JS/register.js"></script>
     </body>
 </html>
