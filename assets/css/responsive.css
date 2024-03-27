@@ -12,6 +12,7 @@
 
 /* Mobile */
 @media screen and (max-width: 767px) {
+    /* Auth - Sign In - Sign Up */
     .auth__intro {
         display: none;
     }
@@ -59,5 +60,34 @@
     .auth__text-link {
         font-size: 1.4rem;
         margin-top: 50px;
+    }
+
+    /* Home */
+    .header {
+        background-color: #fff;
+    }
+
+    .top-bar {
+        padding: 16px 0;
+    }
+
+    .top-bar__more {
+        display: block;
+    }
+
+    .logo__home {
+        width: 24px;
+        height: 24px;
+    }
+
+    .logo__home-title {
+        font-size: 1.8rem;
+    }
+
+    .top-action__group {
+        display: none;
+    }
+    body {
+        background-color: #f6f6f6;
     }
 }
