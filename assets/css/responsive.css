@@ -11,6 +11,10 @@
     .info {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .gauge__cover {
+        font-size: 2rem;
+    }
 }
 
 /* Mobile */
@@ -96,14 +100,52 @@
         margin-bottom: 110px;
     }
 
+    .index__desc {
+        padding: 15px;
+    }
+
     .info {
-        grid-template-columns: repeat(1, 1fr);
-        padding: 20px;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     .info__desc {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         font-weight: 600;
+        margin-top: 15px;
+    }
+
+    .gauge {
+        padding: 0;
+    }
+
+    .gauge__cover {
+        font-size: 2rem;
+    }
+
+    .info__desc-mobile {
+        font-size: 1.2rem;
+    }
+
+    .gauge__text1 {
+        left: 3px;
+        bottom: -20px;
+    }
+
+    .gauge__text2 {
+        right: -2px;
+        bottom: -20px;
+    }
+
+    .gauge__text3 {
+        right: 1px;
+    }
+
+    .gauge__text4 {
+        right: 5px;
+    }
+
+    .gauge__text5 {
+        right: -7px;
     }
 }

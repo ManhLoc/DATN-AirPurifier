@@ -568,11 +568,12 @@ button {
     font-size: 2rem;
     font-weight: 700;
     line-height: 141.667%;
+    margin-top: 25px;
 }
 
 .gauge {
     width: 100%;
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
     font-size: 32px;
     color: #004033;
     padding: 10px;
@@ -616,13 +617,41 @@ button {
     align-items: center;
     justify-content: center;
     padding-bottom: 25%;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #1a162e;
 }
 
 .gauge_text {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 190px;
+}
+
+.gauge__text1 {
+    position: absolute;
+    left: 9px;
+    bottom: -28px;
+}
+
+.gauge__text2 {
+    position: absolute;
+    right: 0;
+    bottom: -28px;
+}
+
+.gauge__text3 {
+    right: 5px;
+}
+
+.gauge__text4 {
+    right: 10px;
+}
+
+.gauge__text5 {
+    right: -5px;
 }
 
 .form-group {

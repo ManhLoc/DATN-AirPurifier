@@ -60,40 +60,87 @@ dbRef1.on("value", (snap) => {
 dbRef2.on("value", (snap) => {
     pm1.innerHTML = snap.val();
     pm1Value = snap.val();
-    document.getElementById("gaugeFillPM1").style.transform = `rotate(${pm1Value * 0.36
+    document.getElementById("gaugeFillPM1").style.transform = `rotate(${pm1Value * 3
         }deg)`;
+    if (pm1Value <= 12) {
+        document.getElementById("gaugeFillPM1").style.backgroundColor = "#00e400";
+    } else if (pm1Value >= 13 && pm1Value <= 35) {
+        document.getElementById("gaugeFillPM1").style.backgroundColor = "#FFFF00";
+    } else if (pm1Value >= 36 && pm1Value <= 55) {
+        document.getElementById("gaugeFillPM1").style.backgroundColor = "#FF7E00";
+    } else {
+        document.getElementById("gaugeFillPM1").style.backgroundColor = "#FF0000";
+    }
     console.log("Giá trị PM1:", pm1Value);
 });
 
 dbRef3.on("value", (snap) => {
     pm25.innerHTML = snap.val();
     pm25Value = snap.val();
-    document.getElementById("gaugeFillPM25").style.transform = `rotate(${pm25Value * 0.36
+    document.getElementById("gaugeFillPM25").style.transform = `rotate(${pm25Value * 3
         }deg)`;
+    if (pm25Value <= 12) {
+        document.getElementById("gaugeFillPM25").style.backgroundColor = "#00e400";
+    } else if (pm25Value >= 13 && pm25Value <= 35) {
+        document.getElementById("gaugeFillPM25").style.backgroundColor = "#FFFF00";
+    } else if (pm25Value >= 36 && pm25Value <= 55) {
+        document.getElementById("gaugeFillPM25").style.backgroundColor = "#FF7E00";
+    } else {
+        document.getElementById("gaugeFillPM25").style.backgroundColor = "#FF0000";
+    }
     console.log("Giá trị PM25:", pm25Value);
 });
 
 dbRef4.on("value", (snap) => {
     pm10.innerHTML = snap.val();
     pm10Value = snap.val();
-    document.getElementById("gaugeFillPM10").style.transform = `rotate(${pm10Value * 0.36
+    document.getElementById("gaugeFillPM10").style.transform = `rotate(${pm10Value * 0.6923076923076923
         }deg)`;
+    if (pm10Value <= 54) {
+        document.getElementById("gaugeFillPM10").style.backgroundColor = "#00e400";
+    } else if (pm10Value >= 55 && pm10Value <= 154) {
+        document.getElementById("gaugeFillPM10").style.backgroundColor = "#FFFF00";
+    } else if (pm10Value >= 155 && pm10Value <= 254) {
+        document.getElementById("gaugeFillPM10").style.backgroundColor = "#FF7E00";
+    } else {
+        document.getElementById("gaugeFillPM10").style.backgroundColor = "#FF0000";
+    }
     console.log("Giá trị PM10:", pm10Value);
 });
 
 dbRef5.on("value", (snap) => {
     co2.innerHTML = snap.val();
     co2Value = snap.val();
-    document.getElementById("gaugeFillCO2").style.transform = `rotate(${co2Value * 0.36
+    document.getElementById("gaugeFillCO2").style.transform = `rotate(${co2Value * 0.03
         }deg)`;
+    if (co2Value <= 999) {
+        document.getElementById("gaugeFillCO2").style.backgroundColor = "#00e400";
+    } else if (co2Value >= 1000 && co2Value <= 2000) {
+        document.getElementById("gaugeFillCO2").style.backgroundColor = "#FFFF00";
+    } else if (co2Value >= 2001 && co2Value <= 5000) {
+        document.getElementById("gaugeFillCO2").style.backgroundColor = "#FF7E00";
+    } else {
+        document.getElementById("gaugeFillCO2").style.backgroundColor = "#FF0000";
+    }
     console.log("Giá trị CO2:", co2Value);
 });
 
 dbRef6.on("value", (snap) => {
     tvoc.innerHTML = snap.val();
     tvocValue = snap.val();
-    document.getElementById("gaugeFillTVOC").style.transform = `rotate(${tvocValue * 0.36
+    document.getElementById("gaugeFillTVOC").style.transform = `rotate(${tvocValue * 36
         }deg)`;
+    if (tvocValue < 0.3) {
+        document.getElementById("gaugeFillTVOC").style.backgroundColor = "#00e400";
+    } else if (tvocValue >= 0.3 && tvocValue < 0.5) {
+        document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FFFF00";
+    } else if (tvocValue >= 0.5 && tvocValue < 1) {
+        document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FF7E00";
+    } else if (tvocValue >= 1 && tvocValue < 3) {
+        document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FF0000";
+    } if (tvocValue >= 3) {
+        document.getElementById("gaugeFillTVOC").style.backgroundColor = "#8F3F97";
+    }
     console.log("Giá trị TVOC:", tvocValue);
 });
 
@@ -102,6 +149,17 @@ dbRef7.on("value", (snap) => {
     tempValue = snap.val();
     document.getElementById("gaugeFillTemp").style.transform = `rotate(${tempValue * 3.6
         }deg)`;
+    if (tempValue < 30) {
+        document.getElementById("gaugeFillTemp").style.backgroundColor = "#00e400";
+    } else if (tempValue >= 30 && tempValue < 35) {
+        document.getElementById("gaugeFillTemp").style.backgroundColor = "#FFFF00";
+    } else if (tempValue >= 35 && tempValue < 40) {
+        document.getElementById("gaugeFillTemp").style.backgroundColor = "#FF7E00";
+    } else if (tempValue >= 40 && tempValue < 45) {
+        document.getElementById("gaugeFillTemp").style.backgroundColor = "#FF0000";
+    } else {
+        document.getElementById("gaugeFillTemp").style.backgroundColor = "#8F3F97";
+    }
     console.log("Giá trị Temp:", tempValue);
 });
 
@@ -110,6 +168,17 @@ dbRef8.on("value", (snap) => {
     humidValue = snap.val();
     document.getElementById("gaugeFillHumid").style.transform = `rotate(${humidValue * 1.8
         }deg)`;
+    if (humidValue <= 80) {
+        document.getElementById("gaugeFillHumid").style.backgroundColor = "#00e400";
+    } else if (humidValue > 81 && humidValue <= 85) {
+        document.getElementById("gaugeFillHumid").style.backgroundColor = "#FFFF00";
+    } else if (humidValue > 85 && humidValue <= 90) {
+        document.getElementById("gaugeFillHumid").style.backgroundColor = "#FF7E00";
+    } else if (humidValue > 90 && humidValue <= 95) {
+        document.getElementById("gaugeFillHumid").style.backgroundColor = "#FF0000";
+    } else {
+        document.getElementById("gaugeFillHumid").style.backgroundColor = "#8F3F97";
+    }
     console.log("Giá trị Humid:", humidValue);
 });
 
@@ -190,10 +259,25 @@ database.ref("/Control/Speed").on("value", function (snapshot) {
     if (snapshot.exists()) {
         var speed = snapshot.val();
         if (speed > 0) {
+            myRange.value = speed;
             updateRange.innerHTML = speed;
         }
         else {
+            myRange.value = speed;
             updateRange.innerHTML = speed;
+        }
+    } else console.log("No data available!");
+});
+
+database.ref("/Control/Mode").on("value", function (snapshot) {
+    if (snapshot.exists()) {
+        var mode = snapshot.val();
+        if (mode == 1) {
+            document.getElementById("auto").checked = true;
+        } else if (mode == 2) {
+            document.getElementById("normal").checked = true;
+        } else if (mode == 3) {
+            document.getElementById("sleep").checked = true;
         }
     } else console.log("No data available!");
 });
