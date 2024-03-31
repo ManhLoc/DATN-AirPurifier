@@ -66,9 +66,9 @@
     }
 
     /* Home */
-    .header {
+    /* .header {
         background-color: #fff;
-    }
+    } */
 
     .top-bar {
         padding: 16px 0;
@@ -91,9 +91,9 @@
         display: none;
     }
 
-    body {
+    /* body {
         background-color: #f6f6f6;
-    }
+    } */
     /* Main */
     .index {
         margin: 0;
