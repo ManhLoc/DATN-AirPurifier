@@ -128,18 +128,16 @@ dbRef5.on("value", (snap) => {
 dbRef6.on("value", (snap) => {
     tvoc.innerHTML = snap.val();
     tvocValue = snap.val();
-    document.getElementById("gaugeFillTVOC").style.transform = `rotate(${tvocValue * 36
+    document.getElementById("gaugeFillTVOC").style.transform = `rotate(${tvocValue * 0.12
         }deg)`;
-    if (tvocValue < 0.3) {
+    if (tvocValue <= 220) {
         document.getElementById("gaugeFillTVOC").style.backgroundColor = "#00e400";
-    } else if (tvocValue >= 0.3 && tvocValue < 0.5) {
+    } else if (tvocValue >= 221 && tvocValue <= 660) {
         document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FFFF00";
-    } else if (tvocValue >= 0.5 && tvocValue < 1) {
+    } else if (tvocValue >= 661 && tvocValue <= 1430) {
         document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FF7E00";
-    } else if (tvocValue >= 1 && tvocValue < 3) {
+    } else {
         document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FF0000";
-    } if (tvocValue >= 3) {
-        document.getElementById("gaugeFillTVOC").style.backgroundColor = "#8F3F97";
     }
     console.log("Giá trị TVOC:", tvocValue);
 });
