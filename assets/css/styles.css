@@ -727,9 +727,10 @@ button {
 .box-range {
     position: absolute;
     bottom: -115px;
-    right: -140px;
+    right: -115px;
     display: flex;
     align-items: center;
+    width: 212px;
     background: white;
     padding: 15px 15px 15px 20px;
     border-radius: 5px;
@@ -766,7 +767,7 @@ button {
 }
 
 .box-range__value {
-    width: 55px;
+    /* width: 55px; */
     color: #77dae6;
     font-size: 1.8rem;
     font-weight: 600;
@@ -786,7 +787,7 @@ button {
 /* Button Ion */
 .device__inner {
     position: absolute;
-    left: -130px;
+    left: -115px;
     bottom: -100px;
     display: flex;
     align-items: center;
