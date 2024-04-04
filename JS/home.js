@@ -136,8 +136,12 @@ dbRef6.on("value", (snap) => {
         document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FFFF00";
     } else if (tvocValue >= 661 && tvocValue <= 1430) {
         document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FF7E00";
-    } else {
+    } else if (tvocValue >= 1431 && tvocValue <= 2200) {
         document.getElementById("gaugeFillTVOC").style.backgroundColor = "#FF0000";
+    } else if (tvocValue >= 2201 && tvocValue <= 3300) {
+        document.getElementById("gaugeFillTVOC").style.backgroundColor = "#8F3F97";
+    } else {
+        document.getElementById("gaugeFillTVOC").style.backgroundColor = "#7E0023";
     }
     console.log("Giá trị TVOC:", tvocValue);
 });
