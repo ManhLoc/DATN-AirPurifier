@@ -128,7 +128,7 @@ dbRef5.on("value", (snap) => {
 dbRef6.on("value", (snap) => {
     tvoc.innerHTML = snap.val();
     tvocValue = snap.val();
-    document.getElementById("gaugeFillTVOC").style.transform = `rotate(${tvocValue * 0.12
+    document.getElementById("gaugeFillTVOC").style.transform = `rotate(${tvocValue * 0.0327272727272727
         }deg)`;
     if (tvocValue <= 220) {
         document.getElementById("gaugeFillTVOC").style.backgroundColor = "#00e400";
