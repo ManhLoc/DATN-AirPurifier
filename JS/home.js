@@ -172,7 +172,7 @@ dbRef8.on("value", (snap) => {
         }deg)`;
     if (humidValue <= 80) {
         document.getElementById("gaugeFillHumid").style.backgroundColor = "#00e400";
-    } else if (humidValue > 81 && humidValue <= 85) {
+    } else if (humidValue > 80 && humidValue <= 85) {
         document.getElementById("gaugeFillHumid").style.backgroundColor = "#FFFF00";
     } else if (humidValue > 85 && humidValue <= 90) {
         document.getElementById("gaugeFillHumid").style.backgroundColor = "#FF7E00";
