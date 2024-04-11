@@ -185,6 +185,38 @@ dbRef8.on("value", (snap) => {
 });
 
 // Cập nhập giá trị button về Firebase
+controlTopOff.onclick = function () {
+    document.getElementById('controlTopOnOff').style.left = '0'
+    document.getElementById('controlTopOnOffImg').src = "./assets/icons/plug-off.svg"
+    database.ref("/Control").update({
+        OnOff: 0,
+    });
+}
+
+controlTopOn.onclick = function () {
+    document.getElementById('controlTopOnOff').style.left = '42px'
+    document.getElementById('controlTopOnOffImg').src = "./assets/icons/plug-on.svg"
+    database.ref("/Control").update({
+        OnOff: 1,
+    });
+}
+
+controlTopChildLockOff.onclick = function () {
+    document.getElementById('controlTopChildLock').style.left = '0'
+    document.getElementById('controlTopChildLockImg').src = "./assets/icons/baby-solid.svg"
+    database.ref("/Control").update({
+        Lock: 0,
+    });
+}
+
+controlTopChildLockOn.onclick = function () {
+    document.getElementById('controlTopChildLock').style.left = '42px'
+    document.getElementById('controlTopChildLockImg').src = "./assets/icons/baby-solid-on.svg"
+    database.ref("/Control").update({
+        Lock: 1,
+    });
+}
+
 btnOff.onclick = function () {
     document.getElementById('btnOne').style.left = '0'
     database.ref("/Control").update({
@@ -246,6 +278,32 @@ radioInput3.addEventListener("change", () => {
 
 
 // Tự động update hình ảnh
+database.ref("/Control/OnOff").on("value", function (snapshot) {
+    if (snapshot.exists()) {
+        if (snapshot.val() == 1) {
+            document.getElementById('controlTopOnOff').style.left = '42px'
+            document.getElementById('controlTopOnOffImg').src = "./assets/icons/plug-on.svg"
+        }
+        else {
+            document.getElementById('controlTopOnOff').style.left = '0'
+            document.getElementById('controlTopOnOffImg').src = "./assets/icons/plug-off.svg"
+        }
+    } else console.log("No data available!");
+});
+
+database.ref("/Control/Lock").on("value", function (snapshot) {
+    if (snapshot.exists()) {
+        if (snapshot.val() == 1) {
+            document.getElementById('controlTopChildLock').style.left = '42px'
+            document.getElementById('controlTopChildLockImg').src = "./assets/icons/baby-solid-on.svg"
+        }
+        else {
+            document.getElementById('controlTopChildLock').style.left = '0'
+            document.getElementById('controlTopChildLockImg').src = "./assets/icons/baby-solid.svg"
+        }
+    } else console.log("No data available!");
+});
+
 database.ref("/Control/Ion").on("value", function (snapshot) {
     if (snapshot.exists()) {
         if (snapshot.val() == 1) {

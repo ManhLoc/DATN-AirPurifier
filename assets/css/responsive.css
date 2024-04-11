@@ -148,4 +148,18 @@
     .gauge__text5 {
         right: -7px;
     }
+
+    .control-top {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .control-top-border {
+        padding: 10px;
+    }
+
+    .button-box {
+        margin-top: 10px;
+    }
 }
