@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Clock | Air Purifier</title>
+
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+        <!-- Styles CSS -->
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/clock.css" />
+
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="top-bar">
+                    <!-- More -->
+                    <button class="top-bar__more">
+                        <img
+                            src="./assets/icons/more.svg"
+                            alt=""
+                            class="top-bar__more-icon"
+                        />
+                    </button>
+
+                    <!-- Logo -->
+                    <a href="./home.html" class="logo">
+                        <img
+                            src="./assets/icons/logo.svg"
+                            alt="Air Purifier"
+                            class="logo__img logo__home"
+                        />
+                        <h2 class="logo__title logo__home-title">
+                            Air Purifier
+                        </h2>
+                    </a>
+
+                    <!-- Action -->
+                    <div class="top-action">
+                        <div class="top-action__group">
+                            <button class="top-action__btn">
+                                <img
+                                    src="./assets/icons/notice.png"
+                                    alt=""
+                                    class="top-action__icon"
+                                />
+                            </button>
+                            <div class="top-action__separate"></div>
+                            <button class="top-action__btn">
+                                <img
+                                    src="./assets/icons/setting.png"
+                                    alt=""
+                                    class="top-action__icon"
+                                />
+                            </button>
+                        </div>
+
+                        <div class="top-action__user">
+                            <img
+                                src="./assets/imgs/avatar.png"
+                                alt=""
+                                class="top-action__avt"
+                            />
+
+                            <!-- Dropdown -->
+                            <div class="action-dropdown top-action__dropdown">
+                                <div class="action-dropdown__inner user-menu">
+                                    <img
+                                        src="./assets/icons/dropdown-arrow.svg"
+                                        alt=""
+                                        class="action-dropdown__arrow top-action__dropdown-arrow"
+                                    />
+
+                                    <div class="user-menu__top">
+                                        <img
+                                            src="./assets/imgs/avatar.png"
+                                            alt=""
+                                            class="user-menu__avatar"
+                                        />
+                                        <div>
+                                            <p class="user-menu__name">Admin</p>
+                                            <p>@admin</p>
+                                        </div>
+                                    </div>
+
+                                    <ul class="user-menu__list">
+                                        <li>
+                                            <a
+                                                href="#!"
+                                                class="user-menu__link"
+                                            >
+                                                <img
+                                                    src="./assets/icons/user-solid.svg"
+                                                    alt=""
+                                                    class="icon user-menu__icon"
+                                                />
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#!"
+                                                class="user-menu__link"
+                                            >
+                                                <img
+                                                    src="./assets/icons/key-solid.svg"
+                                                    alt=""
+                                                    class="icon user-menu__icon"
+                                                />
+                                                Change Password
+                                            </a>
+                                        </li>
+                                        <li class="user-menu__separate">
+                                            <a
+                                                href="./clock.html"
+                                                class="user-menu__link"
+                                                id="switch-theme-btn"
+                                            >
+                                                <img
+                                                    src="./assets/icons/clock-solid.svg"
+                                                    alt=""
+                                                    class="icon user-menu__icon"
+                                                />
+                                                <span>Clock</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#!"
+                                                class="user-menu__link"
+                                            >
+                                                <img
+                                                    src="./assets/icons/setting-solid.svg"
+                                                    alt=""
+                                                    class="icon user-menu__icon"
+                                                />
+                                                Settings
+                                            </a>
+                                        </li>
+                                        <li class="user-menu__separate">
+                                            <a
+                                                href="./index.html"
+                                                class="user-menu__link"
+                                            >
+                                                <img
+                                                    src="./assets/icons/logout-solid.svg"
+                                                    alt=""
+                                                    class="icon user-menu__icon"
+                                                />
+                                                Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <main class="main">
+            <div class="main-clock">
+                <h1 class="heading-clock">Clock</h1>
+                <!-- On -->
+                <div class="on-device">
+                    <div class="on-device__top">
+                        <p class="on-device__top-desc">Turn on the device:</p>
+                        <div class="button-box">
+                            <div id="controlOnDevice" class="btn-box"></div>
+                            <button
+                                type="button"
+                                id="controlOnDeviceOff"
+                                class="toggle-btn"
+                            >
+                                Off
+                            </button>
+                            <button
+                                type="button"
+                                id="controlOnDeviceOn"
+                                class="toggle-btn"
+                            >
+                                On
+                            </button>
+                        </div>
+                    </div>
+                    <div class="on-device__bottom">
+                        <div class="on-device__select-left">
+                            <label for="onHour" class="on-device__hour">
+                                Hour:
+                            </label>
+                            <select
+                                name="onHour"
+                                id="onHour"
+                                onchange="getSelectOnHour()"
+                            >
+                                <option value="">-Select-</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>
+                        </div>
+                        <div class="on-device__select-right">
+                            <label for="onMinute" class="on-device__minute">
+                                Minute:
+                            </label>
+                            <select
+                                name="onMinute"
+                                id="onMinute"
+                                onchange="getSelectOnMinute()"
+                            >
+                                <option value="">-Select-</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Off -->
+                <div class="off-device">
+                    <div class="off-device__top">
+                        <p class="off-device__top-desc">Turn off the device:</p>
+                        <div class="button-box">
+                            <div id="controlOffDevice" class="btn-box"></div>
+                            <button
+                                type="button"
+                                id="controlOffDeviceOff"
+                                class="toggle-btn"
+                            >
+                                Off
+                            </button>
+                            <button
+                                type="button"
+                                id="controlOffDeviceOn"
+                                class="toggle-btn"
+                            >
+                                On
+                            </button>
+                        </div>
+                    </div>
+                    <div class="off-device__bottom">
+                        <div class="off-device__select-left">
+                            <label for="offHour" class="off-device__hour">
+                                Hour:
+                            </label>
+                            <select
+                                name="offHour"
+                                id="offHour"
+                                onchange="getSelectOffHour()"
+                            >
+                                <option value="">-Select-</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>
+                        </div>
+                        <div class="off-device__select-right">
+                            <label for="offMinute" class="off-device__minute">
+                                Minute:
+                            </label>
+                            <select
+                                name="offMinute"
+                                id="offMinute"
+                                onchange="getSelectOffMinute()"
+                            >
+                                <option value="">-Select-</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <a href="./home.html" class="goHome"> Home </a>
+            </div>
+        </main>
+
+        <!-- JS -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+        <script src="./JS/clock.js"></script>
+    </body>
+</html>
